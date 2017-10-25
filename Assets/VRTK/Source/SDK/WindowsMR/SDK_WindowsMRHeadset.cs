@@ -2,8 +2,8 @@
 namespace VRTK
 {
 #if UNITY_WSA && UNITY_2017_2_OR_NEWER
-using UnityEngine.XR.WSA;
-using UnityEngine.XR;
+    using UnityEngine.XR.WSA;
+    using UnityEngine.XR;
 #endif
 
     using System.Collections.Generic;

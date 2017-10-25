@@ -1,9 +1,9 @@
 ﻿// Simulator System|SDK_Simulator|001
 namespace VRTK
 {
-    #if UNITY_WSA && UNITY_2017_2_OR_NEWER
-using UnityEngine.XR.WSA;
-using UnityEngine.XR;
+#if UNITY_WSA && UNITY_2017_2_OR_NEWER
+    using UnityEngine.XR.WSA;
+    using UnityEngine.XR;
 #endif
 
     using System.Collections.Generic;

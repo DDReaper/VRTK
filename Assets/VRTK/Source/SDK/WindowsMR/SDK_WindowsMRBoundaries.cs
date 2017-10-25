@@ -1,9 +1,9 @@
 ﻿// Simulator Boundaries|SDK_Simulator|004
 namespace VRTK
 {
-    #if UNITY_WSA && UNITY_2017_2_OR_NEWER
-using UnityEngine.XR.WSA;
-using UnityEngine.XR;
+#if UNITY_WSA && UNITY_2017_2_OR_NEWER
+    using UnityEngine.XR.WSA;
+    using UnityEngine.XR;
 #endif
 
     using System.Collections.Generic;
@@ -23,7 +23,7 @@ using UnityEngine.XR;
         public override void InitBoundaries()
         {
 #if UNITY_WSA && UNITY_2017_2_OR_NEWER
-            
+
             if (HolographicSettings.IsDisplayOpaque)
             {
                 // Defaulting coordinate system to RoomScale in immersive headsets.
@@ -85,7 +85,7 @@ using UnityEngine.XR;
         public override bool IsPlayAreaSizeCalibrated()
         {
 #if UNITY_WSA && UNITY_2017_2_OR_NEWER
-            
+
             return UnityEngine.Experimental.XR.Boundary.configured;
 #else
             return false;
