@@ -179,7 +179,7 @@ namespace VRTK
             Component tmpComponent = destination.gameObject.AddComponent(source.GetType());
             if (copyProperties)
             {
-                PropertyInfo[] foundProperties = source.GetType().GetProperties();
+                PropertyInfo[] foundProperties = source.GetType().GetProperties().ToArray();
                 for (int i = 0; i < foundProperties.Length; i++)
                 {
                     PropertyInfo foundProperty = foundProperties[i];
@@ -562,6 +562,7 @@ namespace VRTK
             {
                 return type;
             }
+#if !UNITY_WSA
             Assembly[] foundAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             for (int i = 0; i < foundAssemblies.Length; i++)
             {
@@ -571,6 +572,7 @@ namespace VRTK
                     return type;
                 }
             }
+#endif
             return null;
         }
 

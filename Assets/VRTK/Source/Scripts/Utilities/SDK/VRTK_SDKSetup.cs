@@ -10,6 +10,9 @@ namespace VRTK
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+#if UNITY_WSA && !UNITY_EDITOR
+    using System.Reflection;
+#endif
 
     /// <summary>
     /// The SDK Setup describes a list of SDKs and game objects to use.
@@ -337,7 +340,11 @@ namespace VRTK
                 ReadOnlyCollection<VRTK_SDKInfo> installedSDKInfos = installedSDKInfosList[index];
                 VRTK_SDKInfo currentSDKInfo = currentSDKInfos[index];
 
+#if UNITY_WSA && !UNITY_EDITOR
+                Type baseType = currentSDKInfo.type.GetTypeInfo().BaseType;
+#else
                 Type baseType = currentSDKInfo.type.BaseType;
+#endif
                 if (baseType == null)
                 {
                     continue;
